@@ -1,5 +1,5 @@
-import src.login.login as login
+import src.main_screen as main
 
 
 if __name__ == '__main__':
-    login.main_account_screen()
+    main.main_account_screen()
