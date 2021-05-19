@@ -10,6 +10,9 @@ import tkinter
 from globals import get_tree_dataset
 
 def generate_tree(val):
+    # Clear plot
+    plt.close("all")
+    
     treeMaxLeafNodes = val
     datasetId = get_tree_dataset()
     dataSet = None
@@ -25,7 +28,7 @@ def generate_tree(val):
 
     if dataSet == None:
         show_method = getattr(tkinter.messagebox, 'show{}'.format("warning"))
-        show_method("Error", "Not enough numeric types in dataset.")       
+        show_method("Error", "Dataset not loaded.")       
         return
 
     X = dataSet.data

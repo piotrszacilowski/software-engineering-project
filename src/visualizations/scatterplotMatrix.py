@@ -11,6 +11,9 @@ import numpy as np
 from globals import get_metadata
 
 def generate_scatterplot_matrix(file):
+    
+    # Clear plot
+    plt.close("all")
 
     root = tkinter.Tk()
     root.wm_title = "ScatterplotMatrix"
@@ -92,11 +95,10 @@ def generate_scatterplot_matrix(file):
             
     canvas = FigureCanvasTkAgg(fig, master=root)  # A tk.DrawingArea.
     canvas.draw()
-
     toolbar = NavigationToolbar2Tk(canvas, root, pack_toolbar=False)
     toolbar.update()
 
     toolbar.pack(side=tkinter.BOTTOM, fill=tkinter.X)
     canvas.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=1)
-
+    
     tkinter.mainloop()
