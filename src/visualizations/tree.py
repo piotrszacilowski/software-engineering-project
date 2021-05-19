@@ -9,8 +9,8 @@ from sklearn import tree
 import tkinter
 from globals import get_tree_dataset
 
-def generate_tree():
-
+def generate_tree(val):
+    treeMaxLeafNodes = val
     datasetId = get_tree_dataset()
     dataSet = None
 
@@ -32,7 +32,7 @@ def generate_tree():
     y = dataSet.target
     X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0)
 
-    clf = DecisionTreeClassifier(max_leaf_nodes=3, random_state=0)
+    clf = DecisionTreeClassifier(max_leaf_nodes=treeMaxLeafNodes, random_state=0)
     clf.fit(X_train, y_train)
 
 

@@ -3,7 +3,7 @@ fileselection = ""
 meta = None
 
 # 0 - iris, 1 - digits, 2 - wine, 3 - breast_cancer
-treeDataset = None 
+treeDataset = 0 
 
 def initialize(): 
     global fileselection
