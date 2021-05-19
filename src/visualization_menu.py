@@ -5,6 +5,7 @@ from globals import get_selection, get_metadata
 from visualizations.scatterplot import generate_scatterplot
 from visualizations.scatterplotMatrix import generate_scatterplot_matrix
 from visualizations.choose_columns import choose_columns_screen
+from visualizations.dataset_picker import dataset_picker_screen
 
 def visualizations(main_screen):
     #global visualizations_screen
@@ -28,7 +29,6 @@ def visualizations(main_screen):
         width="30",
         text="Scatterplot", 
         command=lambda: choose_columns_screen() 
-        #generate_scatterplot(get_selection(), [0, 1])
       ).pack()
     Label(visualizations_screen, text="").pack()
     Button(
@@ -44,7 +44,7 @@ def visualizations(main_screen):
         height="2", 
         width="30",
         text="Tree",
-        #command=lambda: generate_scatterplot_matrix(get_selection()),     
+        command=lambda: dataset_picker_screen(),     
     ).pack()
     Label(visualizations_screen, text="").pack()
     Button(

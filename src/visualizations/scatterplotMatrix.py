@@ -50,10 +50,7 @@ def generate_scatterplot_matrix(file):
                 try:
                     val = float(cell)
                 except:
-                    try:
-                        val = int(cell)
-                    except:
-                        val = 0
+                    val = 0
                 
                 usedColumns[columnId].append(val)
                 columnId += 1
