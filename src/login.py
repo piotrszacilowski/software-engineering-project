@@ -1,4 +1,5 @@
 from tkinter import *
+import main_menu
 import os
 
 
@@ -81,9 +82,9 @@ def login_verify():
     list_of_files = os.listdir()
     if username1 in list_of_files:
         file1 = open(username1, "r")
-        verify = file1.read().splitlines()
+        verify = file1.read().splitlines()[1]
         if password1 in verify:
-            login_sucess()
+            login_success()
 
         else:
             password_not_recognised()
@@ -92,13 +93,14 @@ def login_verify():
         user_not_found()
 
 
-def login_sucess():
+def login_success():
     global login_success_screen
     login_success_screen = Toplevel(login_screen)
     login_success_screen.title("Success")
     login_success_screen.geometry("150x100")
     Label(login_success_screen, text="Login Success").pack()
     Button(login_success_screen, text="OK", command=delete_login_success).pack()
+
 
 
 def password_not_recognised():
