@@ -8,5 +8,5 @@ import login
 
 if __name__ == '__main__':
     globals.initialize()
-    #main_account_screen.main_account_screen()
+    main_account_screen.main_account_screen()
     main_menu.main_menu()

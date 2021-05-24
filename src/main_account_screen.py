@@ -1,5 +1,8 @@
 from tkinter import *
+from tkinter import ttk
 import login
+
+
 def main_account_screen():
     global main_screen
     main_screen = Tk()
@@ -10,5 +13,6 @@ def main_account_screen():
     Button(text="Logowanie", height="2", width="30", command=lambda: login.login(main_screen)).pack()
     Label(text="").pack()
     Button(text="Rejestracja", height="2", width="30", command=lambda: login.register(main_screen)).pack()
-
+    
     main_screen.mainloop()
+

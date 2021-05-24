@@ -16,7 +16,7 @@ def browse_file():  # Browse and upload file from explorer, to use in future
 
 def open_file(path, mode):
     global selection
-    selection = "src/datasets/" + path
+    selection = "./src/datasets/" + path
     set_selection(selection)
     meta = metadata()
     meta.collect_metadata(selection)

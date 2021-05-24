@@ -1,6 +1,7 @@
 from tkinter import *
 import main_menu
 import os
+import main_account_screen
 
 
 def register(main_screen):
@@ -123,6 +124,7 @@ def user_not_found():
 
 def delete_login_success():
     login_success_screen.destroy()
+    main_account_screen.main_screen.destroy()
 
 
 def delete_password_not_recognised():
