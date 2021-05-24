@@ -12,7 +12,7 @@ class metadata:
     chosenColumns = None
     #numericColumns = None
 
-    def collect_metadata(self, file):
+    def collect_metadata(self, file, fileAlt):
         print(file)
         temp = file.split('.')
         extension = temp[len(temp)-1]
@@ -23,7 +23,12 @@ class metadata:
         else:
             Exception("File Error: Not recognized file extension.")
 
-        with open(file, 'r') as file:
+        try:
+            f = open(file, 'r')
+        except IOError:
+            f = open(fileAlt, 'r')
+
+        with f as file:
             columns = file.readline().split(self.delimiter)
 
             columnCount = len(columns)
